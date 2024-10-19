@@ -1,0 +1,528 @@
+\documentclass[letterpaper,fleqn,leqno]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[letterpaper, margin=1in]{geometry}
+%\usepackage{xcolor, colortbl}
+%\usepackage{tabularx}
+%\usepackage{tikz}
+\usepackage{blkarray}
+\usepackage{mathtools}
+\usepackage{bigstrut}
+
+\begin{document}
+	\newcommand{\problem}[1]{\noindent\textbf{Section #1.}}
+	\newcommand{\chunk}[1]{
+		\noindent\begin{minipage}[t]{\textwidth}
+			#1
+		\end{minipage}
+	}
+	\newcommand{\quess}[2]{
+		\begin{enumerate}
+			\item [#1.]
+			#2
+		\end{enumerate}
+	}
+	\newcommand{\ques}[2]{
+		\begin{enumerate}
+			\item [#1.] \quad
+			#2
+		\end{enumerate}
+	}
+
+	\newcommand{\Sum}[2]{\displaystyle\sum\limits_{#1}^{#2}}
+
+	\chunk{
+		\problem{3.2}
+		\ques{3}{
+			\begin{enumerate}
+				\item [(d)]
+				$\begin{blockarray}{c[rrr|r]}
+					(a_1) & 2 & 4 & -2 & 4 \\
+					(b_1) & 1 & -2 & -4 & -1 \\
+					(c_1) & -2 & -1 & -3 & -4 \\
+				\end{blockarray}$ \\
+				$\begin{blockarray}{c[rrr|r]l}
+					(b_2) & 2 & -4 & -8 & -2 & 2(b_1) \\
+					(b_3) & 0 & -5 & -11 & -6 & (b_2)+(c_1) \\
+					(c_2) & 0 & 3 & -5 & 0 & (a_1)+(c_1) \\
+					(b_4) & 0 & -15 & -33 & -18 & 3(b_3) \\
+					(c_3) & 0 & 15 & -25 & 0 & 5(c_2) \\
+					(c_4) & 0 & 0 & -58 & -18 & (b_4)+(c_3) \\
+				\end{blockarray}$ \\
+				$\begin{blockarray}{[rrr|r]}
+					2 & 4 & -2 & 4 \\
+					0 & 5 & 11 & 6 \\
+					0 & 0 & 58 & 18 \\
+				\end{blockarray}$ \\
+				$\begin{aligned}[t]
+					58x_3 &= 18 \\
+					x_3 &= \frac{9}{29} \\
+				\end{aligned}$ \quad
+				$\begin{aligned}[t]
+					5x_2+11x_3 &= 6 \\
+					5x_2+\frac{99}{29} &= 6 \\
+					5x_2 &= \frac{75}{29} \\
+					x_2 &= \frac{15}{29} \\
+				\end{aligned}$ \quad
+				$\begin{aligned}[t]
+					2x_1+4x_2-2x_3 &= 4 \\
+					2x_1+4\frac{15}{29}-2\frac{9}{29} &= 4 \\
+					2x_1 &= \frac{74}{29} \\
+					x_1 &= \frac{37}{29} \\
+				\end{aligned}$
+			\end{enumerate}
+		}
+	}
+	\chunk{
+		\ques{5}{
+			\begin{enumerate}
+				\item [(a)]
+				$\begin{blockarray}{c[rrr|r]}
+					(a_1) & 2 & 4 & -2 & 4 \\
+					(b_1) & 1 & -2 & -4 & -1 \\
+					(c_1) & -2 & -1 & -3 & -4 \\
+				\end{blockarray}$ \\
+				$\begin{blockarray}{c[rrr|r]l}
+					(a_2) & 1 & 2 & -1 & 2 & \frac{1}{2}(a_1) \\
+					(b_2) & 0 & -4 & -3 & -3 & (b_1)-(a_2) \\
+					(c_2) & 0 & 3 & -5 & 0 & (c_1)+(a_1) \\
+					(c_3) & 0 & 0 & -\frac{29}{4} & -\frac{9}{4} & (c_1)+(a_1)+\frac{3}{4}(b_2) \\
+				\end{blockarray}$ \\
+				$\textbf{U}=\begin{bmatrix*}[r]
+					2 & 4 & -2 \\
+					0 & -4 & -3 \\
+					0 & 0 & -\frac{29}{4} \\
+				\end{bmatrix*}$,
+				$\textbf{L}=\begin{bmatrix*}[r]
+					1 & 0 & 0 \\
+					\frac{1}{2} & 1 & 0 \\
+					-1 & -\frac{3}{4} & 1 \\
+				\end{bmatrix*}$ \\
+
+
+				\item [(b)]
+				$\begin{bmatrix*}[r]
+					1 & 0 & 0 \\
+					\frac{1}{2} & 1 & 0 \\
+					-1 & -\frac{3}{4} & 1 \\
+				\end{bmatrix*}
+				\begin{bmatrix*}[r]
+					2 & 4 & -2 \\
+					0 & -4 & -3 \\
+					0 & 0 & -\frac{29}{4} \\
+				\end{bmatrix*}$ \\
+				$\begin{bmatrix*} 1 & 0 & 0 \end{bmatrix*}
+				\begin{bmatrix*}[r]
+					2 & 4 & -2 \\
+					0 & -4 & -3 \\
+					0 & 0 & -\frac{29}{4} \\
+				\end{bmatrix*}=
+				\begin{bmatrix*}[r]
+					2 & 4 & -2 \\
+				\end{bmatrix*}$ \\
+				$\begin{bmatrix*} \frac{1}{2} & 1 & 0 \end{bmatrix*}
+				\begin{bmatrix*}[r]
+					2 & 4 & -2 \\
+					0 & -4 & -3 \\
+					0 & 0 & -\frac{29}{4} \\
+				\end{bmatrix*}=
+				\begin{bmatrix*}[r]
+					1 & -2 & -4 \\
+				\end{bmatrix*}$ \\
+				$\begin{bmatrix*} -1 & -\frac{3}{4} & 1 \end{bmatrix*}
+				\begin{bmatrix*}[r]
+					2 & 4 & -2 \\
+					0 & -4 & -3 \\
+					0 & 0 & -\frac{29}{4} \\
+				\end{bmatrix*}=
+				\begin{bmatrix*}[r]
+					-2 & -1 & -3 \\
+				\end{bmatrix*}$ \\
+				$\textbf{A}=\begin{bmatrix*}[r]
+					2 & 4 & -2 \\
+					1 & -2 & -4 \\
+					-2 & -1 & -3 \\
+				\end{bmatrix*}$
+			\end{enumerate}
+		}
+	}
+	\chunk{
+		\quess{6}{
+			det$(\textbf{A})=\textbf{U}_{11}\cdot\textbf{U}_{22}\cdot\textbf{U}_{33}=58$ \\
+		}
+	}
+
+	\chunk{
+		\problem{3.3}
+		\ques{5}{
+			\begin{enumerate}
+				\item [(a)]
+				$\textbf{A}=\begin{bmatrix*}
+					\dfrac{3}{4} & \dfrac{1}{2} \\
+					\dfrac{1}{4} & \dfrac{1}{2} \\
+				\end{bmatrix*}$ \\
+				det$(\textbf{A})=\dfrac{3}{4}\cdot\dfrac{1}{2}-\dfrac{1}{2}\cdot\dfrac{1}{4}=\dfrac{1}{4}$ \\
+				$\textbf{A}^{-1}=4\begin{bmatrix*}
+					\dfrac{1}{2} & -\dfrac{1}{2} \\
+					-\dfrac{1}{4} & \dfrac{3}{4} \\
+				\end{bmatrix*}=\begin{bmatrix*}
+				2 & -2 \\
+				-1 & 3 \\
+				\end{bmatrix*}$ \\
+			\end{enumerate}
+		}
+	}
+	\chunk{
+		\ques{7}{
+			\begin{enumerate}
+				\item [(b)]
+				$\textbf{A}=\begin{bmatrix*}[r]
+					-1 & -1 & 1 \\
+					2 & 2 & -4 \\
+					1 & -2 & 3 \\
+				\end{bmatrix*}$ \\
+				$\begin{blockarray}{c[rrr|rrr]}
+					(a_1) & -1 & -1 & 1 & 1 & 0 & 0 \\
+					(b_1) & 2 & 2 & -4 & 0 & 1 & 0 \\
+					(c_1) & 1 & -2 & 3 & 0 & 0 & 1 \\
+				\end{blockarray}$ \\
+				$\begin{blockarray}{c[rrr|rrr]l}
+					(a_2) & -1 & -1 & 1 & 1 & 0 & 0 & (a_1) \\
+					(b_2) & 0 & -3 & 4 & 1 & 0 & 1 & (c_1)+2(a_1) \\
+					(c_2) & 0 & 0 & -2 & 2 & 1 & 0 & (b_1)+2(a_1) \\
+				\end{blockarray}$ \\
+				$\begin{blockarray}{c[rrr|rrr]l}
+					(a_3) & -1 & 0 & -\frac{1}{3} & \frac{2}{3} & 0 & -\frac{1}{3} & (a_1)-\frac{1}{3}(b_2) \\
+					(a_3) & -1 & 0 & 0 & \frac{1}{3} & -\frac{1}{6} & -\frac{1}{3} & (a_1)-\frac{1}{3}(b_2)-\frac{1}{6}(c_2) \\
+					(b_3) & 0 & -3 & 0 & 5 & 2 & 1 & (b_2)+2(c_2) \\
+					(c_3) & 0 & 0 & -2 & 2 & 1 & 0 & (c_2) \\
+				\end{blockarray}$ \\
+				$\begin{blockarray}{c[rrr|rrr]l}
+					(a_4) & 1 & 0 & 0 & -\frac{1}{3} & \frac{1}{6} & \frac{1}{3} & -(a_3) \\
+					(b_4) & 0 & 1 & 0 & -\frac{5}{3} & -\frac{2}{3} & -\frac{1}{3} & -\frac{1}{3}(b_3) \\
+					(c_4) & 0 & 0 & 1 & -1 & -\frac{1}{2} & 0 & -\frac{1}{2}(c_2) \\
+				\end{blockarray}$ \\
+				$\textbf{A}^{-1}=\begin{bmatrix*}[r]
+					-\frac{1}{3} & \frac{1}{6} & \frac{1}{3} \\
+					-\frac{5}{3} & -\frac{2}{3} & -\frac{1}{3} \\
+					-1 & -\frac{1}{2} & 0 \\
+				\end{bmatrix*}$
+			\end{enumerate}
+		}
+	}
+	\chunk{
+		\quess{18}{
+			Why must a matrix be square if it has an inverse? \\
+			Let \textbf{A} be a matrix of size $p\times q$ and $\textbf{A}^{-1}$ of size $q\times r$. \\
+			$\textbf{A}\textbf{A}^{-1}=\textbf{I}=\textbf{A}^{-1}\textbf{A}$ \\
+			$\underbrace{\textbf{A}\textbf{A}^{-1}}_{p\times r}=\textbf{A}^{-1}\textbf{A}$ \\
+			In order for $\textbf{A}^{-1}\textbf{A}$ to be valid $p=r$. \\
+			$\underbrace{\textbf{A}\textbf{A}^{-1}}_{r\times r}=\underbrace{\textbf{A}^{-1}\textbf{A}}_{q\times q}$ \\
+			$p=r=q$ therefore \textbf{A} must be square. \\
+		}
+	}
+	\chunk{
+		\ques{33}{
+			\begin{enumerate}
+				\item [(a)]
+				$\textbf{A}=\begin{bmatrix*}
+					4 & 0 \\
+					2 & 2 \\
+				\end{bmatrix*}$ \\
+				det$(\textbf{A}-\lambda\textbf{I})=
+				\begin{vmatrix}
+					4-\lambda & 0 \\
+					2 & 2-\lambda \\
+				\end{vmatrix}=(4-\lambda)(2-\lambda)-0\cdot2$ \\
+				$\lambda_1=4$, $\lambda_2=2$ \\
+				$\begin{aligned}[t]
+					& \textbf{A}-4\textbf{I}=\begin{bmatrix*}
+						0 & 0 \\
+						2 & -2 \\
+					\end{bmatrix*} \\
+					& 2u_1-2u_2=0 \\
+					& u_1=u_2 \\
+					& \textbf{u}=[1,1] \\
+				\end{aligned}$ \quad
+				$\begin{aligned}[t]
+					& \textbf{A}-2\textbf{I}=\begin{bmatrix*}
+						2 & 0 \\
+						2 & 0 \\
+					\end{bmatrix*} \\
+					& 2v_1-0v_2=0 \\
+					& v_1=0 \\
+					& \textbf{v}=[0,1] \\
+				\end{aligned}$ \\
+				$\textbf{U}=\begin{bmatrix*}
+					1 & 0 \\
+					1 & 1 \\
+				\end{bmatrix*}$,
+				$\textbf{U}^{-1}=
+				\dfrac{1}{\text{det}(\textbf{U})}\begin{bmatrix*}
+					1 & 0 \\
+					-1 & 1 \\
+				\end{bmatrix*}=
+				\dfrac{1}{1}\begin{bmatrix*}
+					1 & 0 \\
+					-1 & 1 \\
+				\end{bmatrix*}$ \\
+				$\textbf{A}=\textbf{U}\textbf{D}_\lambda\textbf{U}^{-1}=
+				\begin{bmatrix*}
+					1 & 0 \\
+					1 & 1 \\
+				\end{bmatrix*}
+				\begin{bmatrix*}
+					4 & 0 \\
+					0 & 2 \\
+				\end{bmatrix*}
+				\begin{bmatrix*}
+					1 & 0 \\
+					-1 & 1 \\
+				\end{bmatrix*}$ \\
+
+				\item [(c)]
+				$\textbf{A}=\begin{bmatrix*}
+					2 & 1 \\
+					2 & 3 \\
+				\end{bmatrix*}$ \\
+				det$(\textbf{A}-\lambda\textbf{I})=
+				\begin{vmatrix}
+					2-\lambda & 1 \\
+					2 & 3-\lambda \\
+				\end{vmatrix}=(2-\lambda)(3-\lambda)-1\cdot2$ \\
+				$6-5\lambda+\lambda^2-2=\lambda^2-5\lambda+4=(\lambda-4)(\lambda-1)$ \\
+				$\lambda_1=4$, $\lambda_2=1$ \\
+				$\begin{aligned}[t]
+					& \textbf{A}-4\textbf{I}=\begin{bmatrix*}
+						-2 & 1 \\
+						2 & -1 \\
+					\end{bmatrix*} \\
+					& 2u_1-u_2=0 \\
+					& 2u_1=u_2 \\
+					& \textbf{u}=[1,2] \\
+				\end{aligned}$ \quad
+				$\begin{aligned}[t]
+					& \textbf{A}-1\textbf{I}=\begin{bmatrix*}
+						1 & 1 \\
+						2 & 2 \\
+					\end{bmatrix*} \\
+					& v_1+v_2=0 \\
+					& v_1=-v_2 \\
+					& \textbf{v}=[1,-1] \\
+				\end{aligned}$ \\
+				$\textbf{U}=\begin{bmatrix*}
+					1 & 1 \\
+					2 & -1 \\
+				\end{bmatrix*}$,
+				$\textbf{U}^{-1}=
+				\dfrac{1}{\text{det}(\textbf{U})}\begin{bmatrix*}
+					-1 & -1 \\
+					-2 & 1 \\
+				\end{bmatrix*}=
+				\dfrac{1}{-3}\begin{bmatrix*}
+					-1 & -1 \\
+					-2 & 1 \\
+				\end{bmatrix*}$ \\
+				$\textbf{A}=\textbf{U}\textbf{D}_\lambda\textbf{U}^{-1}=
+				\begin{bmatrix*}
+					1 & 1 \\
+					2 & -1 \\
+				\end{bmatrix*}
+				\begin{bmatrix*}
+					4 & 0 \\
+					0 & 1 \\
+				\end{bmatrix*}
+				\begin{bmatrix*}
+					\frac{1}{3} & \frac{1}{3} \\
+					\frac{2}{3} & -\frac{1}{3} \\
+				\end{bmatrix*}$ \\
+			\end{enumerate}
+		}
+	}
+	\chunk{
+		\quess{34}{
+			$\textbf{p}=[10,10]$ \\
+			$\textbf{A}^{10}\textbf{p}=\textbf{U}\textbf{D}_\lambda^{10}\textbf{U}^{-1}$
+			\begin{enumerate}
+				\item [(a)]
+				$\begin{bmatrix*}
+					1 & 0 \\
+					1 & 1 \\
+				\end{bmatrix*}
+				\begin{bmatrix*}
+					4 & 0 \\
+					0 & 2 \\
+				\end{bmatrix*}^{10}
+				\begin{bmatrix*}
+					1 & 0 \\
+					-1 & 1 \\
+				\end{bmatrix*}=
+				\begin{bmatrix*}
+					4^{10} & 0 \\
+					4^{10} & 2^{10} \\
+				\end{bmatrix*}
+				\begin{bmatrix*}
+					1 & 0 \\
+					-1 & 1 \\
+				\end{bmatrix*}=
+				\begin{bmatrix*}
+					4^{10} & 0 \\
+					4^{10}-2^{10} & 2^{10} \\
+				\end{bmatrix*}$ \\
+
+
+				\item [(b)]
+				$\begin{bmatrix*}
+					1 & 1 \\
+					2 & -1 \\
+				\end{bmatrix*}
+				\begin{bmatrix*}
+					4 & 0 \\
+					0 & 1 \\
+				\end{bmatrix*}^{10}
+				\begin{bmatrix*}
+					\frac{1}{3} & \frac{1}{3} \\
+					\frac{2}{3} & -\frac{1}{3} \\
+				\end{bmatrix*}=
+				\begin{bmatrix*}
+					4^{10} & 1 \\
+					2^{10} & -1 \\
+				\end{bmatrix*}
+				\begin{bmatrix*}
+					\frac{1}{3} & \frac{1}{3} \\
+					\frac{2}{3} & -\frac{1}{3} \\
+				\end{bmatrix*}=
+				\begin{bmatrix*}
+					\frac{4^{10}}{3}+\frac{2}{3} & \frac{4^{10}}{3}-\frac{1}{3} \\
+					\frac{2^{10}}{3}-\frac{2}{3} & \frac{2^{10}}{3}+\frac{1}{3} \\
+				\end{bmatrix*}$ \\
+			\end{enumerate}
+		}
+	}
+
+	\chunk{
+		\problem{3.4}
+		\ques{8}{
+			\begin{enumerate}
+				\item [(a)]
+				$\textbf{A}=\begin{bmatrix*}[r]
+					0.7 & -0.2 \\
+					-0.4 & 0.8 \\
+				\end{bmatrix*}$ \\
+				$\textbf{I}-\textbf{D}=\textbf{A}$ \\
+				$\textbf{D}=\textbf{I}-\textbf{A}$ \\
+				$\textbf{D}=
+				\begin{bmatrix*}[r]
+					0.3 & 0.2 \\
+					0.4 & 0.2 \\
+				\end{bmatrix*}$ \\
+				$(\textbf{I}-\textbf{D})^{-1}=\Sum{i=0}{\infty}\textbf{D}^k\approx
+				\begin{bmatrix*}
+					1 & 0 \\
+					0 & 1 \\
+				\end{bmatrix*}+
+				\begin{bmatrix*}
+					0.3 & 0.2 \\
+					0.4 & 0.2 \\
+				\end{bmatrix*}+
+				\begin{bmatrix*}
+					0.09+0.08 & 0.06+0.04 \\
+					0.12+0.08 & 0.08+0.04 \\
+				\end{bmatrix*}$ \\
+				$\textbf{A}^{-1}\approx\begin{bmatrix*}
+					1.47 & 0.3 \\
+					0.6 & 1.32 \\
+				\end{bmatrix*}$ \\
+				$\textbf{A}^{-1}=\dfrac{1}{\text{det}(\textbf{A})}
+				\begin{bmatrix*}
+					0.8 & 0.2 \\
+					0.4 & 0.7 \\
+				\end{bmatrix*}=\dfrac{1}{0.56-0.08}
+				\begin{bmatrix*}
+					0.8 & 0.2 \\
+					0.4 & 0.7 \\
+				\end{bmatrix*}=
+				\begin{bmatrix*}
+					1.66 & 0.42 \\
+					0.83 & 1.46 \\
+				\end{bmatrix*}$
+			\end{enumerate}
+		}
+	}
+	\chunk{
+		\ques{11}{
+			\begin{alignat*}{3}
+				7x_1 & {}+{} & x_2 & {}+{} & 2x_3 &= 30 \\
+				x_1 & {}+{} & 5x_2 & {}+{} & 3x_3 &= 10 \\
+				2x_1 & {}+{} & 3x_2& {}+{} & 8x_3 &= 12
+			\end{alignat*}
+			\begin{enumerate}
+				\item [(a)]
+				$\underbrace{\begin{bmatrix*}
+					7 & 1 & 2 \\
+					1 & 5 & 3 \\
+					2 & 3 & 8 \\
+				\end{bmatrix*}}_{\textbf{A}}
+				\underbrace{\begin{bmatrix*}
+					x_1 \\ x_2 \\ x_3 \\
+				\end{bmatrix*}}_{\textbf{x}}=
+				\underbrace{\begin{bmatrix*}
+					30 \\ 10 \\ 12 \\
+				\end{bmatrix*}}_{\textbf{b}}$ \\
+				$x_1'=7x_1$, $x_2'=5x_2$, $x_3'=8x_3$ \\
+				$\underbrace{\begin{bmatrix*}
+						1 & \frac{1}{5} & \frac{1}{4} \\
+						\frac{1}{7} & 1 & \frac{3}{8} \\
+						\frac{2}{7} & \frac{3}{5} & 1 \\
+				\end{bmatrix*}}_{\textbf{A}'}
+				\underbrace{\begin{bmatrix*}
+						x_1' \\ x_2' \\ x_3' \\
+				\end{bmatrix*}}_{\textbf{x}'}=
+				\underbrace{\begin{bmatrix*}
+						30 \\ 10 \\ 12 \\
+				\end{bmatrix*}}_{\textbf{b}}$ \\
+				$(\textbf{I}-\textbf{D})\textbf{x}'=b$ \\
+				$\textbf{x}'=\textbf{D}\textbf{x}'+\textbf{b}$ \\
+				$\textbf{x}'=
+				\begin{bmatrix*}
+					0 & -\frac{1}{5} & -\frac{1}{4} \\
+					-\frac{1}{7} & 0 & -\frac{3}{8} \\
+					-\frac{2}{7} & -\frac{3}{5} & 0 \\
+				\end{bmatrix*}
+				\textbf{x}'+\textbf{b}$ \\
+
+				\item [(b)]
+				$\textbf{x}^{(0)}=[0,0,0]$ \\
+				$\textbf{x}^{(1)}=[30,10,12]$ \\
+				$\textbf{x}^{(2)}\approx[25,1,-3]$ \\
+				$\textbf{x}^{(3)}\approx[30,7,4]$ \\
+				$\textbf{x}^{(4)}\approx[27,4,-1]$ \\
+				$\textbf{x}^{(5)}\approx[29,6,2]$ \\
+				$\textbf{x}^{(6)}\approx[28,5,0]$ \\
+				$\textbf{x}^{(7)}\approx[29,6,1]$ \\
+				$\textbf{x}^{(8)}\approx[29,6,0]$ \\
+				$\textbf{x}^{(9)}\approx[29,6,1]$ \\
+				$\textbf{x}^{(10)}\approx[29,6,0]$ \\
+				$\vdots$ \\
+				$\textbf{x}^{(100)}\approx[28.7662,5.7711,0.3184]$ \\
+
+				\item [(c)]
+				$\textbf{x}^{(0)}=[100,100,100]$ \\
+				$\textbf{x}^{(1)}\approx[-15,-42,-77]$ \\
+				$\textbf{x}^{(2)}\approx[58,41,41]$ \\
+				$\textbf{x}^{(3)}\approx[11,-14,-29]$ \\
+				$\textbf{x}^{(4)}\approx[40,19,17]$ \\
+				$\textbf{x}^{(5)}\approx[22,-2,-11]$ \\
+				$\textbf{x}^{(6)}\approx[33,11,7]$ \\
+				$\textbf{x}^{(7)}\approx[26,3,-4]$ \\
+				$\textbf{x}^{(8)}\approx[30,8,3]$ \\
+				$\textbf{x}^{(9)}\approx[28,5,-1]$ \\
+				$\textbf{x}^{(10)}\approx[29,7,1]$ \\
+				$\vdots$ \\
+				$\textbf{x}^{(100)}\approx[28.7662,5.7711,0.3184]$ \\
+			\end{enumerate}
+		}
+	}
+\end{document}

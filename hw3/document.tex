@@ -1,0 +1,330 @@
+\documentclass[letterpaper,fleqn]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[letterpaper, margin=1in]{geometry}
+%\usepackage{xcolor, colortbl}
+%\usepackage{cancel}
+%\usepackage{tabularx}
+\usepackage{blkarray}
+\usepackage{mathtools}
+\usepackage{enumerate}
+
+%\setlength{\extrarowheight}{3pt}
+
+\begin{document}
+	\newcommand{\sect}[2]{
+		\noindent\textbf{Section #1}
+		\begin{enumerate}
+			#2
+		\end{enumerate}
+	}
+	
+	\newcommand{\ques}[3][\quad] {
+%		\fbox{
+		\begin{minipage}{\textwidth}
+			\item [#2.] #1
+			#3
+		\end{minipage}\\
+%		}
+	}
+	
+	\sect{2.4}{
+		\ques{1}{
+			\begin{enumerate}[(a)]
+				\item 
+				$\textbf{I}^2=\textbf{I}$
+				\item 
+				$\textbf{1} \cdot \textbf{1}=n$
+				\item 
+				$\textbf{I1}=\textbf{1}$
+				\item 
+				$\textbf{Ie}_i=\textbf{e}_i$
+				\item 
+				$\textbf{1} \cdot \textbf{e}_i=1$
+				\item 
+				$\textbf{e}_i \cdot \textbf{e}_i=1$
+				\item 
+				$\textbf{e}_i \cdot \textbf{e}_j=0$
+				\item 
+				$\textbf{1I1}=\textbf{1} \cdot \textbf{1}=n$
+				\item 
+				$\textbf{e}_i\textbf{Ie}_j=\textbf{e}_i \cdot \textbf{e}_j=0$
+			\end{enumerate}
+		}	
+		
+		\ques{2}{
+			\begin{enumerate}[(a)]
+				\item 
+				$\begin{bmatrix*}[r]
+					3 & 5 & 7 \\
+					2 & -1 & 1 \\
+					1 & 6 & -2 \\
+				\end{bmatrix*}
+				\begin{bmatrix}
+					x_1 \\ x_2 \\ x_3 \\
+				\end{bmatrix}
+				=
+				\begin{bmatrix}
+					8 \\ 4 \\ 6 \\	
+				\end{bmatrix}$
+				\item 
+				$\begin{bmatrix*}[r]
+					3 & 5 & 7 & -8 \\
+					2 & -1 & 1 & -4 \\
+					1 & 6 & -2 & -6 \\
+				\end{bmatrix*}
+				\begin{bmatrix}
+					x_1 \\ x_2 \\ x_3 \\ 1 \\
+				\end{bmatrix}
+				=
+				\begin{bmatrix}
+					0 \\ 0 \\ 0 \\
+				\end{bmatrix}$
+			\end{enumerate}
+		}
+		
+		
+		\ques{6}{
+			\begin{enumerate}
+				\item [(a)]
+				$\textbf{p'}=
+				\underbrace{\begin{bmatrix*}[r]
+						1.5 & -0.2 \\
+						0.3 & 0.9 \\
+				\end{bmatrix*}}_{\textbf{A}}\textbf{p}+
+				\underbrace{\begin{bmatrix}
+						100 \\ 50 \\
+				\end{bmatrix}}_{\textbf{B}}$
+				\item [(c)]
+				$\begin{aligned}[t]
+					\textbf{p"} &= \textbf{A}(\textbf{Ap}+\textbf{B})+\textbf{B} \\ 
+					&= \textbf{A}^2\textbf{p}+(\textbf{A}+\textbf{I})\textbf{B} \\
+				\end{aligned}$ \\
+				$\begin{aligned}[t]
+					\textbf{p}^{(3)} &= \textbf{A}(\textbf{A}^2\textbf{p}+(\textbf{A}+\textbf{I})\textbf{B})+\textbf{B} \\ 
+					&= \textbf{A}^3\textbf{p}+(\textbf{A}(\textbf{A}+\textbf{I})+\textbf{I})\textbf{B} \\
+					&= \textbf{A}^3\textbf{p}+(\textbf{A}^2+\textbf{A}+\textbf{I})\textbf{B} \\
+				\end{aligned}$ \\
+			\end{enumerate}
+		}
+		
+		\ques[{$\textbf{Ax}=\textbf{By}=[1,1]$, $\textbf{Ay}=[1,0]$, $\textbf{Bx}=[0,1]$}]{10}{
+			\begin{enumerate}
+				\item [(c)]
+				$\begin{aligned}[t]
+					\textbf{z} &= (\textbf{A}+\textbf{B})\textbf{x}-2(\textbf{A}+\textbf{B})\textbf{y} \\
+					&= \textbf{Ax}+\textbf{Bx}-2\textbf{Ay}-2\textbf{By} \\
+					&= [1,1]+[0,1]-2[1,0]-2[1,1] \\
+					&= [-3,0] \\
+				\end{aligned}$
+				\item [(d)]
+				$\begin{aligned}[t]
+					\textbf{z} &= (3\textbf{A}+\textbf{B})(\textbf{x}+\textbf{y}) \\
+					&= 3\textbf{Ax}+3\textbf{Ay}+\textbf{Bx}+\textbf{By} \\
+					&= 3[1,1]+3[1,0]+[0,1]+[1,1] \\
+					&= [7,5] \\
+				\end{aligned}$
+			\end{enumerate}
+		}
+	}	
+	
+	\newpage
+	
+	\sect{2.5}{
+		\ques{2}{
+			\begin{enumerate}[(a)]
+				\item
+				$|[1,1,1]|_e=\sqrt{3}$,\\ $|[1,1,1]|_s=3$,\\ $|[1,1,1]|_{mx}=1$ \\
+			\end{enumerate}
+		}
+		
+		\ques{10}{
+			\begin{enumerate}[(a)]
+				\item 
+				$\textbf{A}=\begin{bmatrix}
+					1.3 & -0.1 & -0.2 \\
+					0.4 & 0.8 & -0.3 \\
+					0.1 & 0.1 & 1.1 \\
+				\end{bmatrix}$ \\
+				$\|\textbf{A}\|_s=1.8$, $\|\textbf{A}\|_{mx}=1.6$
+				\item
+				$\textbf{p'}=\textbf{Ap}$, $\textbf{p}=[10,10,10]$ \\
+				$|\textbf{p'}|_s\leq(1.8|\textbf{p}|_s=54)$, $|\textbf{p'}|_{mx}\leq(1.6|\textbf{p}|_{mx}=16)$ \\
+				$\textbf{p'}=[10,9,13]$ \\
+				$|\textbf{p'}|_s=32$, $|\textbf{p'}|_{mx}=13$		
+			\end{enumerate}
+		}
+		
+		\ques{26}{
+			\begin{enumerate}
+				\item [(c)]
+				$\textbf{A}=\begin{bmatrix*}[r]
+					1 & 6 \\
+					-2 & -6 \\
+				\end{bmatrix*}$, $\textbf{u}_1=[-2,1]$, $\textbf{u}_2=[-3,2]$ \\
+				$\textbf{Au}_1=\lambda_1\textbf{u}_1$ \\
+				$\textbf{Au}_1=[4,-2]=-2\textbf{u}_1$, $\lambda_1=-2$ \\
+				$\textbf{Au}_2=\lambda_2\textbf{u}_2$ \\
+				$\textbf{Au}_2=[9,-6]=-3\textbf{u}_2$, $\lambda_2=-3$
+			\end{enumerate}
+		}
+		
+		\ques{28}{
+			\begin{enumerate}
+				\item [(c)]
+				$\textbf{u}_1=[1,1]$, $\textbf{u}_2=[-5,6]$ \\
+				$\lambda_1=7$, $\lambda_2=-4$ \\
+				$\textbf{v}=7\textbf{u}_1+\textbf{u}_2$ \\
+				$\begin{aligned}[t]
+					\textbf{A}^3\textbf{v} &= \textbf{A}^3(7\textbf{u}_1+\textbf{u}_2) \\
+					&= 7\textbf{A}^3\textbf{u}_1+\textbf{A}^3\textbf{u}_2 \\
+					&= 7(7^3)\textbf{u}_1+(-4)^3\textbf{u}_2 \\
+					&= [7^4+4^3\cdot5, 7^4-4^3\cdot6]
+				\end{aligned}$
+			\end{enumerate}
+		}
+	}
+	
+	\sect{2.6}{
+		\ques{6}{
+			\begin{enumerate}
+				\item [(b)]
+				$G_2=\begin{bmatrix}
+					0 & 1 & 1 & 1 & 1 & 0 & 0 & 0 \\
+					1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\
+					1 & 1 & 0 & 1 & 0 & 0 & 0 & 0 \\
+					1 & 1 & 1 & 0 & 0 & 0 & 0 & 1 \\ 
+					1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+					0 & 0 & 0 & 0 & 1 & 0 & 1 & 1 \\ 
+					0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+					0 & 0 & 0 & 1 & 1 & 1 & 1 & 0 \\
+				\end{bmatrix}$ \\
+				$\textbf{A}=\begin{bmatrix}
+					0 & 1 & 1 & 1 \\
+					1 & 0 & 1 & 1 \\
+					1 & 1 & 0 & 1 \\
+					1 & 1 & 1 & 0 \\
+				\end{bmatrix}$, 
+				$\textbf{B}=\begin{bmatrix}
+					1 & 0 & 0 & 0 \\
+					0 & 0 & 0 & 0 \\
+					0 & 0 & 0 & 0 \\
+					0 & 0 & 0 & 1 \\
+				\end{bmatrix}$ \\
+				$G_2=\begin{bmatrix}
+					\textbf{A} & \textbf{B} \\
+					\textbf{B} & \textbf{A} \\
+				\end{bmatrix}$ \\
+			\end{enumerate}
+		}
+		
+		\ques[{
+			$M=\begin{blockarray}{cc}
+				& \text{From} \\
+				\text{To} & 
+				\begin{blockarray}{c*{8}{c}}
+					& A & B & C & D & E & F & G & H \\
+					\begin{block}{l[*{8}{c}]}
+						A & 0 & 1/2 & 1/2 & 1/3 & 0 & 0 & 0 & 1/4 \\
+						B & 1/4 & 0 & 0 & 1/3 & 0 & 0 & 0 & 0 \\
+						C & 1/4 & 0 & 0 & 1/3 & 0 & 0 & 0 & 0 \\
+						D & 1/4 & 1/2 & 1/2 & 0 & 0 & 0 & 0 & 0 \\
+						E & 0 & 0 & 0 & 0 & 0 & 1/2 & 1/2 & 1/4 \\
+						F & 0 & 0 & 0 & 0 & 1/3 & 0 & 0 & 1/4 \\
+						G & 0 & 0 & 0 & 0 & 1/3 & 0 & 0 & 1/4 \\
+						H & 1/4 & 0 & 0 & 0 & 1/3 & 1/2 & 1/2 & 0 \\
+					\end{block}
+				\end{blockarray}
+			\end{blockarray} \\
+			A=\begin{bmatrix}
+				0 & 0 & 0 & 1/4 \\
+				0 & 0 & 0 & 0 \\
+				0 & 0 & 0 & 0 \\
+				0 & 0 & 0 & 0 \\
+			\end{bmatrix} \\
+			M=\begin{bmatrix}
+				\begin{bmatrix}
+					0 & 1/2 & 1/2 & 1/3 \\
+					1/4 & 0 & 0 & 1/3 \\
+					1/4 & 0 & 0 & 1/3 \\
+					1/4 & 1/2 & 1/2 & 0 \\
+				\end{bmatrix} & A \\
+				A^T & \begin{bmatrix}
+					0 & 1/2 & 1/2 & 1/4 \\
+					1/3 & 0 & 0 & 1/4 \\
+					1/3 & 0 & 0 & 1/4 \\
+					1/3 & 1/2 & 1/2 & 0 \\
+				\end{bmatrix}
+			\end{bmatrix}$
+		}]{7}{}
+	}
+	
+	\sect{3.1}{
+		\ques{2}{
+			\begin{enumerate}
+				\item [(b)]
+				$\underbrace{\begin{bmatrix*}[r]
+					2 & -3 \\
+					-5 & 6 \\
+				\end{bmatrix*}}_A\begin{bmatrix}
+					x \\ y \\
+				\end{bmatrix}=
+				\begin{bmatrix}
+					5 \\ 10 \\
+				\end{bmatrix}$ \\
+				det$(A)=-3$ \\
+				$x=\dfrac{\begin{vmatrix}
+					5 & -3 \\
+					10 & 6 \\
+				\end{vmatrix}}{\text{det}(A)}$, 
+				$y=\dfrac{\begin{vmatrix}
+					2 & 5 \\
+					-5 & 10 \\
+				\end{vmatrix}}{\text{det}(A)}$ \\
+			$x=\dfrac{60}{-3}$, $y=\dfrac{45}{-3}$ \\
+			$x=-20$, $y=-15	$ \\
+			\end{enumerate}
+		}
+		
+		\ques{23}{
+			\begin{enumerate}[(a)]
+				\item \quad
+				\begin{enumerate}
+					\item [(i)]
+					$\textbf{A}=\begin{bmatrix}
+						4 & 0 \\
+						2 & 2 \\
+					\end{bmatrix}$ \\
+					$\begin{aligned}[t]
+						\text{det}(\textbf{A}-\lambda\textbf{I}) &= \begin{vmatrix}
+							4-\lambda & 0 \\
+							2 & 2-\lambda \\
+						\end{vmatrix} \\
+						&= (4-\lambda)(2-\lambda)-0\cdot2 \\
+						&= (4-\lambda)(2-\lambda) \\
+					\end{aligned}$ \\
+					Eigenvalues are 4 and 2.
+					
+					
+					\item [(iii)]
+					$\textbf{A}=\begin{bmatrix}
+						2 & 1 \\
+						2 & 3 \\
+					\end{bmatrix}$ \\
+					$\begin{aligned}[t]
+						\text{det}(\textbf{A}-\lambda\textbf{I}) &= \begin{vmatrix}
+							2-\lambda & 1 \\
+							2 & 3-\lambda \\
+						\end{vmatrix} \\
+						&= (2-\lambda)(3-\lambda)-1\cdot2 \\
+						&= 6-5\lambda+\lambda^2-2\\
+						&= \lambda^2-5\lambda+4 \\
+						&= (\lambda-1)(\lambda-4) \\
+					\end{aligned}$ \\
+					Eigenvalues are 1 and 4.
+				\end{enumerate}
+			\end{enumerate}
+		}
+	}
+\end{document}
